@@ -1,0 +1,17 @@
+#! /bin/bash --init-file
+
+# Helper script for conda-shell.  See that file for more info.
+
+# Source ~/.bashrc so that all the user's usual stuff is available
+source $HOME/.bashrc
+
+# Figure out where the conda "activate" script is
+# We assume the conda executable is already on the path, and lives in ${conda_root}/condabin/conda
+conda_executable_path=`which conda`
+conda_executable_real_path=`realpath $conda_executable_path`
+condabin_real_path=`dirname $conda_executable_real_path`
+conda_root_path=`dirname $condabin_real_path`
+activate_path="$conda_root_path/bin/activate"
+
+# Use source to activate the env
+source "$activate_path" "$1"

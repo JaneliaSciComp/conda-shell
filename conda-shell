@@ -1,0 +1,16 @@
+#! /bin/bash
+
+# This is designed to enable an easy way to launch a subshell that
+# uses a particular conda environment.  If you install miniconda in
+# the usual way, it's a bad platform citizen, and the way it normally
+# works requires adding a bunch of bash functions to your bash
+# session.  This simply won't do.  This script assumes you have added
+# ${conda_root}/condabin to your path, so that the conda *executable*
+# (not the bash function) is available.  It gets the location of
+# conda, figures out where the $conda_root is, then where the
+# "activate" script is.  It then sources the activate script to set up
+# the conda env *in a subshell*.  So to deactivate the env you just do
+# "exit".  This is the way.
+
+conda-shell-helper -s "$1"
+
