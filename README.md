@@ -2,7 +2,7 @@ conda-shell
 ===========
 
 A simple pair of Bash scripts for activating a conda environment in a
-subshell.
+Bash subshell.
 
 
 Prerequisites
@@ -13,13 +13,16 @@ path.  You do not, however, need to let the conda installer modify
 your `.bashrc` file in the, ummm, idiosyncratic way it does by
 default.
 
+You also need to be using Bash (the default Linux shell).  (But
+modifying these scripts to work with e.g. Zsh would likely not be
+difficult.)
+
 
 Installation
 ------------
 
 Copy `conda-shell` and `conda-shell-helper` to somewhere
-on your path and then do `hash -r` (or the equivalent for non-Bash
-shells) to rescan the path.
+on your `PATH` and then do `hash -r`.
 
 
 Use
